@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #c3cfe2, #f5f7fa);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+        h1 {
+            font-size: 3rem;
+            margin: 20px 0;
+            color: #333;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .gallery img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        video {
+            margin-top: 30px;
+            width: 80%;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        footer {
+            margin-top: 30px;
+            color: #666;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <h1 id="greeting">Happy Birthday!</h1>
+    <div class="gallery">
+        <img src="images/pic1.jpg" alt="Photo 1">
+        <img src="images/pic2.jpg" alt="Photo 2">
+        <img src="images/pic3.jpg" alt="Photo 3">
+        <img src="images/pic4.jpg" alt="Photo 4">
+    </div>
+    <video controls>
+        <source src="videos/happy_birthday.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <footer>&copy; 2024 With ❤️ from [Your Name]</footer>
+
+    <script>
+        const name = localStorage.getItem('userName');
+        if (name) {
+            document.getElementById('greeting').innerText = `Happy Birthday, ${name}!`;
+        }
+    </script>
+</body>
+</html>
